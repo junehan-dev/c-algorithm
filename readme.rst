@@ -15,16 +15,25 @@ file_functions
 
 fopen
 -----
-:schema: ``FILE fopen( const char *filename, const char *mode );``
-:returns on success: File pointer
-:returns on fail: null pointer
-:desc: make file to readable as stream 
-
-   >>> if(!fp){
+   :schema: ``FILE fopen( const char *filename, const char *mode );``
+   :returns on success: File pointer
+   :returns on fail: null pointer
+   :desc: make file to readable as stream 
+   :code: >>> fp = fopen('test.txt', "r")
+   ... if(!fp){
    ... perror("fopen() failed!");
    ... return EXIT_FAILURE;
    ... }
+   ... # not erorr
+   ... ## do something...
+   ... fclose(fp);
+   ... return EXIT_SUCCESS;
 
+   perror
+   ------
+    
+      :schema: ``void perror( cont char *s);``
+      :desc: print testual desc of err-code curretly stored in sys-var ``errno`` to ``stderr``
 
 io_functions
 ============
