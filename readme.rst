@@ -7,8 +7,6 @@ INDEX
 =====
 
 - :`file_functions`_: functions about file object.
-  1. :`fopen`_: make file to readable as stream.
-  #. :`perror`: print err stored in ``errno``.
 - :`io_functions`_: to recognize fine with sphinx.
 
 file_functions
@@ -32,25 +30,36 @@ fopen
 
 perror
 ------  
-   :schema: ``void perror( cont char *s);``
+   :schema: ``void perror( cont char *s );``
    :desc: print testual desc of err-code curretly stored in sys-var ``errno`` to ``stderr``
+
+ferror
+------
+   :schema: ``int ferror( FILE *stream );``
+   :desc: 해당 스트림에 대한 error-indicator가 set 되었는지 확인한다.
+   :return on sucess: 설정되었다면 0이 아닌 숫자를 반환.
+   :return on fail: 설정되지 않았다면 0을 반환.
+   :code: >>> if (ferror(fp)){
+      ... puts("I/O error during reading!");
+      ... } else if (feof(fp)){
+      ... puts("EOF readched!");
+      ... }
+
+feof
+----
+   :schema: ``int feof( FILE *stream );``
+   :desc: 해당 스트림 버퍼가 EOF에 도달 했는지 확인한다.
+   :return on success: EOF에러지시자일 경우 0이 아닌 숫자를 반환.
+   :return on fail: EOF에러지시자가 아니었을 경우 0.
+
+fclose
+------
+   :schema: ``int fclose( FILE *stream )``
+   :desc: 사용하던 버퍼를 지우고 정리(tell os)한 후 stream을 닫는다.
+   :return on success: 잘 처리 되었다면 0.
+   :return on fail: 에러가 있을시에 EOF.
 
 io_functions
 ============
 
-- before type annotations
-
->>> def sample(arg1:int, arg2) -> bool:
-...     """Sample class for testing docstring.
-...  
-...     :param arg1: value to be ~ed.
-...     :param arg2: value to be ~ed.
-...     :type arg2: int
-... 
-...     :Keyword Arguments:
-...         :message: some keyword arg.(default to (,))
-... 
-...     :return: return will be...
-...     :rtype: bool
-...     """
 
