@@ -20,14 +20,14 @@ fopen
    :returns on fail: null pointer
    :desc: make file to readable as stream 
    :code: >>> fp = fopen('test.txt', "r")
-   ... if(!fp){
-   ... perror("fopen() failed!");
-   ... return EXIT_FAILURE;
-   ... }
-   ... # not erorr
-   ... ## do something...
-   ... fclose(fp);
-   ... return EXIT_SUCCESS;
+      ... if(!fp){
+      ... perror("fopen() failed!");
+      ... return EXIT_FAILURE;
+      ... }
+      ... # not erorr
+      ... ## do something...
+      ... fclose(fp);
+      ... return EXIT_SUCCESS;
 
 perror
 ------  
