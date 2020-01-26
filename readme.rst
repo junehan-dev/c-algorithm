@@ -29,11 +29,10 @@ fopen
    ... fclose(fp);
    ... return EXIT_SUCCESS;
 
-   perror
-   ------
-    
-      :schema: ``void perror( cont char *s);``
-      :desc: print testual desc of err-code curretly stored in sys-var ``errno`` to ``stderr``
+perror
+------  
+   :schema: ``void perror( cont char *s);``
+   :desc: print testual desc of err-code curretly stored in sys-var ``errno`` to ``stderr``
 
 io_functions
 ============
