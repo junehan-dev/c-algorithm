@@ -62,4 +62,13 @@ fclose
 io_functions
 ============
 
-
+getchar
+-------
+   :schema: ``int getchar(void);``
+   :desc: stdin으로부터 다음 캐릭터를 읽는다. 그만큼 비워진다.
+          만약 EOF를 만난 것으로 실패된다면, stdin에 파일디스크립터에 대해서 eof indicator를 set. ``feof()``
+          그 외의 에러로 실패한다면 error indicator를 set. ``ferror()``
+   :equals to: ``getc(stdin);``
+   :return on success: obtained character
+   :return on fail: EOF
+              
