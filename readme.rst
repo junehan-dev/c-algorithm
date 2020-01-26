@@ -7,7 +7,8 @@ INDEX
 =====
 
 - :`file_functions`_: functions about file object.
-  - :`fopen`_
+  1. :`fopen`_: make file to readable as stream.
+  #. :`perror`: print err stored in ``errno``.
 - :`io_functions`_: to recognize fine with sphinx.
 
 file_functions
