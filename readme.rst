@@ -62,6 +62,22 @@ fclose
 io_functions
 ============
 
+write
+-----
+   :schema: ``ssize_t write(int fd, const void *buf, size_t count);``
+   :desc: from fd is delegating files pointer's cursor, write buf's value by count byte.
+   :return on success: ssize_t, 바이트단위로 크기를 측정하기 위해 사용되며, 쓰여진 바이트수 반환.
+   :return on fail: -1을 반환하고, errno를 설정한다.
+   :errno: (에러에 대한 switch구문을 통한 캡쳐링)[https://github.com/codenamenadja/] 
+
+procedure
+   1. 사용자영역프로세스가 write()시스템 콜 호출.
+   #. 데이터를 시스템영역 버퍼로 복사.
+   #. 변경된 버퍼를 수집해서 최적수준으로 정렬 후에 디스크 드라이버로 전송(write back)
+   #. 프로세스의 점유 메모리에 기록되던 데이터를 생각해보라.
+   #. /proc/sys/vm/dirty_expire_centiseconds에서 버퍼의 최대 나이가 규정된다.
+   #. 동기식 쓰기를 통해 시스템영역에서 HDD로 데이터가 떠나고 나서야 사용자영역으로 돌아 올 수 있다.
+
 getchar
 -------
    :schema: ``int getchar(void);``
@@ -71,4 +87,3 @@ getchar
    :equals to: ``getc(stdin);``
    :return on success: obtained character
    :return on fail: EOF
-              
