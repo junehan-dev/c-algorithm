@@ -68,7 +68,8 @@ write
    :desc: from fd is delegating files pointer's cursor, write buf's value by count byte.
    :return on success: ssize_t, 바이트단위로 크기를 측정하기 위해 사용되며, 쓰여진 바이트수 반환.
    :return on fail: -1을 반환하고, errno를 설정한다.
-   :errno: (에러에 대한 switch구문을 통한 캡쳐링)[https://github.com/codenamenadja/] 
+   :errno: 에러에 대한 switch구문을 통한 캡쳐링 c_write_link_
+   .. _c_write_link: https://github.com/codenamenadja/c_reference_tracking/blob/master/unistd/write/76_write.c
 
 procedure
    1. 사용자영역프로세스가 write()시스템 콜 호출.
