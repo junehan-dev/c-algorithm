@@ -52,6 +52,20 @@ variables
 | USHORT_MAX | 65535U        | max of unsigend short |
 +------------+---------------+-----------------------+
 
+datatypes
+---------
+
+기본적인 데이터 타입
+   :``char``: 1 byte size 문자
+   :``int``: integer, 하드웨어에 따라 2|4 byte 로 갈린다.
+   :``float``: 단정도 부동소수점 
+   :``double``: 배정도 부동소수점 (소수점 표현 2배)
+
+데이터에 붙일 수 있는 qualifier
+   int형 qualifier
+      >>> shart int sh;
+      ... long int counter;
+
 
 file_functions
 ==============

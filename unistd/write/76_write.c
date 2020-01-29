@@ -18,7 +18,7 @@ int main (void)
 
 	word = 1720;
 	count = sizeof (word);
-	fd = open("/Users/jihhan/projects/repos/my_origin/c_pracs/unistd/write/writeable.txt", O_WRONLY);
+	fd = open("/Users/jihhan/projects/repos/my_origin/c_pracs/unistd/write/unwriteable.txt", O_WRONLY);
 	char fd_val;
 	fd_val = fd+48;
 	write(1, &fd_val, 1);
