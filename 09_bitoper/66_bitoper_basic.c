@@ -28,4 +28,9 @@ int main()
 		i++;
 	}
 
+	i = -234;
+
+	i = ~i; 
+	printf("%d", i);
+
 }
