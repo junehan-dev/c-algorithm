@@ -16,6 +16,9 @@ struct Person *create_person(char *name, int a, int h, int w,
         //char s,
         int d)
 {
+    int val = 24231;
+    int *pt = &val;
+    printf("create person size of %ld...%ld:%p\n", sizeof(struct Person), sizeof(pt), pt);
     struct Person *who = malloc(sizeof(struct Person));
     assert(who != NULL);
 
@@ -27,6 +30,12 @@ struct Person *create_person(char *name, int a, int h, int w,
     who->died = d;
 
     return who;
+}
+
+void instantly_vary(struct Person who)
+{
+    who.age += 2;
+    who.height += 5;
 }
 
 void destroy_person(struct Person *who)
