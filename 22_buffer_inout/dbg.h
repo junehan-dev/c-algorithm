@@ -26,7 +26,7 @@
         "[INFO] (%s:%d: errno: %s ) " M "\n", __FILE__, __LINE__,\
         clean_errno(), ##__VA_ARGS__)
 
-#define check(A, M, ...) if (!(A)) {\
+#define check(A, M, ...) if (A) {\
     log_err(M, ##__VA_ARGS__);\
     errno = 0; goto error; }
 
