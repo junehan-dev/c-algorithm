@@ -74,3 +74,9 @@ without regard to their placement in the archive__
             if ref-count drops to zero, object is unloaded.
 
     > Errors from these function family can be diagnosed using ``char *dlerror(void)``.
+
+    3. ``void *dlsym(void *handle, const char * symbol);``
+        - desc:
+            takes "handle" of a dynamic loaded shared object returned by ``dlopen()``
+            along with a null-termindated symbol name, and returns address where symbol is loaded into memory.
+
