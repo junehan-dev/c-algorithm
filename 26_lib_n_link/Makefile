@@ -1,11 +1,11 @@
-CFLAGS= -c -Wall -Iincludes/ 
+CFLAGS= -c -Werror -Wextra -Wall -Iincludes/ 
 LIBS= -ldl $(OPTLIBS)
 PREFIX?= ./
 
 SOURCES= $(wildcard src/*.c)
 OBJECTS= $(patsubst %.c,%.o,$(SOURCES))
 
-TARGET= dynamic_lib.a
+TARGET= d_lib.a
 SO_TARGET= $(patsubst %.a, %.so, $(TARGET))
 
 .PHONY: all
