@@ -1,5 +1,5 @@
-#include "minunit.h"
 #include <dlfcn.h>
+#include "minunit.h"
 
 typedef int (*lib_function) (const char *data);
 char *lib_file = "build/d_lib.so";
