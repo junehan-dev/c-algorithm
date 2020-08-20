@@ -1,4 +1,4 @@
-CFLAGS= -c -Werror -Wextra -Wall -Iincludes/ 
+CFLAGS= -Werror -Wextra -Wall -Iincludes/ 
 LIBS= -ldl $(OPTLIBS)
 PREFIX?= ./
 
@@ -7,6 +7,7 @@ OBJECTS= $(patsubst %.c,%.o,$(SOURCES))
 
 TARGET= d_lib.a
 SO_TARGET= $(patsubst %.a, %.so, $(TARGET))
+TEST_SRC = main.c
 
 .PHONY: all
 all: $(TARGET) $(SO_TARGET)
@@ -26,3 +27,7 @@ clean:
 .PHONY: fclean
 fclean:
 	rm -rf $(TARGET) $(SO_TARGET)
+
+.PHONY: test
+test:
+	$(CC) $(CFLAGS) $(TEST_SRC) -ldl -o main.out

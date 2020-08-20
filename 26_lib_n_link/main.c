@@ -13,6 +13,11 @@ int main(int argc, char *argv[])
     void *lib;
     lib_function func;
 
+    if (argc < 3)
+    {
+        printf("argc should at least 3");
+        return -1;
+    }
     rc = 0;
     lib_file = argv[1];
     func_to_run = argv[2];
