@@ -1,10 +1,10 @@
 echo "Runs tests:"
 
-for i in tests/*_tests
+for i in tests/*test.out
 do
     if test -f $i
     then
-        if $VALGRIND ./$1 2>> tests/tests.log
+        if $VALGRIND $1 2>> tests/tests.log
         then
             echo $1 PASS
         else
