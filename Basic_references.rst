@@ -1,7 +1,6 @@
 C_BASIC_REFERENCES
 =====================
 
-| Provide sphinx documents at https://codenamenadja.github.io/python-ddd/index.html
 
 INDEX
 =====
@@ -156,7 +155,7 @@ bzero(deprecated)
     :schema: ``void bzero(void *s, size_t n);``
     :desc: *s로 부터 시작 하는 메모리를 n바이트 만큼 해제한다.
            해당 바이트의 끝을 ``\0``으로 종료하는 캐릭터 0으로 대체한다.
-           현재 ``memset()``을 사용하는 것으로 대체.
+           현 ``memset()``을 사용하는 것으로 대체.
            만약 이 콜을 통해서 다시 접근하지 않을 데이터가 담긴 주소를 추론할 수 있다면,
            확실하게 삭제해야 하는 민감한 데이터를 지우려할 때, 해당 콜까지 삭제해서, 정확히 민감한 데이터를 삭제하지 못하는
            케이스가 발생하기 떄문이다.
