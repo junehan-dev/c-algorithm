@@ -1,6 +1,13 @@
 CC					= gcc
 CFLAGS				= -Wall -Werror -Wextra -Iincludes 
-OBJECTS				= search/binarysearch.o
+OBJECTS				= search/binarysearch.o \
+					manipulate/reverse.o \
+					manipulate/rotate.o
+
+TESTS				= search/test/binsearch.c \
+					manipulate/test/reverse.c \
+					manipulate/test/rotate.c
+OUTPUT_OPTION		= -o $@
 NAME				= lib_array.a
 .DEFAULT_GOAL		:= all
 
@@ -12,10 +19,14 @@ $(NAME): $(OBJECTS)
 	ranlib $@
 
 .PHONY: test
-test: $(TESTS)
-	$(CC) -Werror -Wextra -Wall -Iincludes search/test/test_binsearch.c $(NAME) -o ./test_binsearch.out
-	./test_binsearch.out
-	/bin/rm ./test_binsearch.out
+test: test_binsearch test_reverse test_rotate
+
+search/binarysearch.o:
+	$(CC) $(CFLAGS) -c search/binarysearch.c -o $@
+manipulate/reverse.o:
+	$(CC) $(CFLAGS) -c manipulate/reverse.c -o $@
+manipulate/rotate.o:
+	$(CC) $(CFLAGS) -c manipulate/rotate.c -o $@
 
 .PHONY: clean
 clean:
@@ -29,5 +40,22 @@ fclean: clean
 .PHONY: re
 re: fclean all
 
-srcs/search/binarysearch.o:
-	$(CC) $(CFLAGS) -c search/binarysearch.c -o $@
+
+.PHONY: test_binsearch
+test_binsearch:
+	$(CC) $(CFLAGS) -Iincludes search/test/binsearch.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out
+
+.PHONY: test_reverse
+test_reverse:
+	$(CC) $(CFLAGS) -Iincludes manipulate/test/reverse.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out
+
+.PHONY: test_rotate
+test_rotate:
+	$(CC) $(CFLAGS) -Iincludes manipulate/test/rotate.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out
+
