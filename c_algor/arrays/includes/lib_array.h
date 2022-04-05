@@ -1,5 +1,13 @@
-#ifndef	_ARRAY_H_
-#define	_ARRAY_H_
-int	binarysearch(int arr[], int size, int value);
+#ifndef	ARRAY_H_
+#define	ARRAY_H_
+#include <unistd.h>
+/* SEARCH */
+int		binarysearch(int arr[], int size, int value);
+
+/* MANIPULATION */
+void	reverse(int *arr, int from, int to);
+int		rotate(int *arr, size_t size, int n);
 #endif
+
+
 

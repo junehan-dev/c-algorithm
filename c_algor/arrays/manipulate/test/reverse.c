@@ -12,12 +12,14 @@ int	main(void)
 	while (i < MAX)  {
 		test[i] = i;
 		assert(test[i] == i);
+		printf("i:%d at %d\n", i, test[i]);
 		i++;
 	}
 
+	reverse(test, 0, 29);
 	while (i-- > 0) {
-		assert(MAX - i - 1 == binarysearch(test, MAX, MAX - i - 1));
-		printf("i:%d at %d\n", MAX - 1 - i, binarysearch(test, MAX, MAX - i - 1));
+		assert(MAX - i - 1 == test[i]);
+		printf("i:%d at %d\n", i, test[i]);
 	}
 	
 	return (0);
