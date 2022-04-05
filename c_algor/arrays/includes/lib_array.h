@@ -6,7 +6,7 @@ int		binarysearch(int arr[], int size, int value);
 
 /* MANIPULATION */
 void	reverse(int *arr, int from, int to);
-int		rotate(int *arr, size_t size, int n);
+void	rotate(int *arr, size_t size, int n);
 #endif
 
 
