@@ -3,14 +3,15 @@ CFLAGS				= -Wall -Werror -Wextra -Iincludes
 OBJECTS				= search/binarysearch.o \
 					search/subarray_max.o \
 					manipulate/reverse.o \
-					manipulate/rotate.o
+					manipulate/rotate.o \
+					manipulate/swap.o
 
 TESTS				= search/test/binsearch.c \
 					search/test/subarray_max.c \
 					manipulate/test/reverse.c \
-					manipulate/test/rotate.c
+					manipulate/test/rotate.c \
+					manipulate/test/swap.c
 
-OUTPUT_OPTION		= -o $@
 NAME				= lib_array.a
 .DEFAULT_GOAL		:= all
 
@@ -22,7 +23,7 @@ $(NAME): $(OBJECTS)
 	ranlib $@
 
 .PHONY: test
-test: test_binsearch test_reverse test_rotate test_subarray_max
+test: test_binsearch test_reverse test_rotate test_subarray_max test_swap
 
 search/subarray_max.o:
 	$(CC) $(CFLAGS) -c search/subarray_max.c -o $@
@@ -32,6 +33,8 @@ manipulate/reverse.o:
 	$(CC) $(CFLAGS) -c manipulate/reverse.c -o $@
 manipulate/rotate.o:
 	$(CC) $(CFLAGS) -c manipulate/rotate.c -o $@
+manipulate/swap.o:
+	$(CC) $(CFLAGS) -c manipulate/swap.c -o $@
 
 .PHONY: clean
 clean:
@@ -67,6 +70,12 @@ test_rotate:
 .PHONY: test_subarray_max
 test_subarray_max:
 	$(CC) $(CFLAGS) -Iincludes search/test/subarray_max.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out
+
+.PHONY: test_swap
+test_swap:
+	$(CC) $(CFLAGS) -Iincludes manipulate/test/swap.c $(NAME) -o ./test.out
 	./test.out
 	/bin/rm ./test.out
 
