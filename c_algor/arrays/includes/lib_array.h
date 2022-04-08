@@ -9,6 +9,7 @@ int		subarray_max(int *arr, size_t size);
 void	reverse(int *arr, int from, int to);
 void	rotate(int *arr, size_t size, int n);
 void	swap(int *s1, int *s2);
+void	wave(int *arr, int n);
 #endif
 
 
