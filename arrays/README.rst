@@ -19,3 +19,10 @@ manipulate
 - rotate
    ``void	rotate(int *arr, size_t size, int n);``
 
+sort
+^^^^
+
+- qsort
+   ``void	qsort(int *arr, size_t n);``
+
+

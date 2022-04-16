@@ -12,6 +12,8 @@ void	swap(int *s1, int *s2);
 void	wave(int *arr, int n);
 #endif
 
+/* sort */
+void	qsort(int *arr, size_t n);
 
 
 
