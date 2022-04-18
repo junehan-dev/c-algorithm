@@ -15,22 +15,21 @@ int	main(void)
 		i--;
 	}
 
-	test[0] = 17;
-	test[12] = 23;
-	test[21] = 1;
-	test[28] = 11;
-	test[2] = 23;
-	test[1] = 8;
+	test[0] = -1;
+	test[12] = -1;
+	test[21] = -1;
+	test[28] = -1;
+	test[2] = -1;
 	i = 0;
 	while (i < MAX) {
 		printf("i:%d at %d\n", i, test[i]);
 		i++;
 	}
 	i = 0;
-	qsort(test, MAX);
-	while (i < MAX - 1) {
-		assert(test[i] <= test[i + 1]);
+	indexsort(test, MAX);
+	while (i < MAX) {
 		printf("i:%d at %d\n", i, test[i]);
+		assert(test[i] == i || test[i] == -1);
 		i++;
 	}
 	

@@ -1,6 +1,5 @@
 LIB_ARRAY
 ---------
-
 search
 ^^^^^^
 
@@ -25,4 +24,6 @@ sort
 - qsort
    ``void	qsort(int *arr, size_t n);``
 
+- indexsort
+   ``void	indexsort(int *arr, size_t n);``
 
