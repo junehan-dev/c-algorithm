@@ -7,7 +7,8 @@ OBJECTS				= search/binarysearch.o \
 					manipulate/swap.o \
 					manipulate/wave.o \
 					sort/qsort.o \
-					sort/indexsort.o
+					sort/indexsort.o \
+					sort/nsort.o
 			
 
 TESTS				= search/test/binsearch.c \
@@ -17,7 +18,8 @@ TESTS				= search/test/binsearch.c \
 					manipulate/test/swap.c \
 					manipulate/test/wave.c \
 					sort/test/qsort.c \
-					sort/test/indexsort.c
+					sort/test/indexsort.c \
+					sort/test/nsort.o
 
 NAME				= lib_array.a
 .DEFAULT_GOAL		:= all
@@ -30,7 +32,9 @@ $(NAME): $(OBJECTS)
 	ranlib $@
 
 .PHONY: test
-test: test_binsearch test_reverse test_rotate test_subarray_max test_swap test_wave test_qsort test_indexsort
+test: test_binsearch test_reverse test_rotate \
+	test_subarray_max test_swap test_wave \
+	test_qsort test_indexsort test_nsort
 
 search/subarray_max.o:
 	$(CC) $(CFLAGS) -c search/subarray_max.c -o $@
@@ -48,6 +52,8 @@ sort/qsort.o:
 	$(CC) $(CFLAGS) -c sort/qsort.c -o $@
 sort/indexsort.o:
 	$(CC) $(CFLAGS) -c sort/indexsort.c -o $@
+sort/nsort.o:
+	$(CC) $(CFLAGS) -c sort/nsort.c -o $@
 
 .PHONY: clean
 clean:
@@ -109,3 +115,8 @@ test_indexsort:
 	./test.out
 	/bin/rm ./test.out
 
+.PHONY: test_nsort
+test_nsort:
+	$(CC) $(CFLAGS) sort/test/nsort.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out

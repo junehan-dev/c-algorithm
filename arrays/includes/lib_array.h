@@ -14,5 +14,5 @@ void	wave(int *arr, int n);
 /* sort */
 void	qsort(int *arr, size_t n);
 void	indexsort(int *arr, size_t n);
-
+void	nsort(int *arr, size_t n);
 #endif
