@@ -27,3 +27,6 @@ sort
 - indexsort
    ``void	indexsort(int *arr, size_t n);``
 
+- nsort
+   ``void	nsort(int *arr, size_t n);``
+
