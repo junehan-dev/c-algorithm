@@ -4,6 +4,7 @@
 /* SEARCH */
 int		binarysearch(int arr[], int size, int value);
 int		subarray_max(int *arr, size_t size);
+int		find_min(int *arr, size_t n);
 
 /* MANIPULATION */
 void	reverse(int *arr, int from, int to);

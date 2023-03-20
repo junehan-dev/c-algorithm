@@ -2,6 +2,7 @@ CC					= gcc
 CFLAGS				= -Wall -Werror -Wextra -Iincludes 
 OBJECTS				= search/binarysearch.o \
 					search/subarray_max.o \
+					search/find_min.o \
 					manipulate/reverse.o \
 					manipulate/rotate.o \
 					manipulate/swap.o \
@@ -13,6 +14,7 @@ OBJECTS				= search/binarysearch.o \
 
 TESTS				= search/test/binsearch.c \
 					search/test/subarray_max.c \
+					search/test/find_min.c \
 					manipulate/test/reverse.c \
 					manipulate/test/rotate.c \
 					manipulate/test/swap.c \
@@ -34,12 +36,15 @@ $(NAME): $(OBJECTS)
 .PHONY: test
 test: test_binsearch test_reverse test_rotate \
 	test_subarray_max test_swap test_wave \
-	test_qsort test_indexsort test_nsort
+	test_qsort test_indexsort test_nsort \
+	test_find_min
 
 search/subarray_max.o:
 	$(CC) $(CFLAGS) -c search/subarray_max.c -o $@
 search/binarysearch.o:
 	$(CC) $(CFLAGS) -c search/binarysearch.c -o $@
+search/find_min.o:
+	$(CC) $(CFLAGS) -c search/find_min.c -o $@
 manipulate/reverse.o:
 	$(CC) $(CFLAGS) -c manipulate/reverse.c -o $@
 manipulate/rotate.o:
@@ -118,5 +123,11 @@ test_indexsort:
 .PHONY: test_nsort
 test_nsort:
 	$(CC) $(CFLAGS) sort/test/nsort.c $(NAME) -o ./test.out
+	./test.out
+	/bin/rm ./test.out
+
+.PHONY: test_find_min
+test_find_min:
+	$(CC) $(CFLAGS) search/test/find_min.c $(NAME) -o ./test.out
 	./test.out
 	/bin/rm ./test.out
