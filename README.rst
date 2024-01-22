@@ -22,3 +22,4 @@ Chapter summary
       - declaration and assignment
       - syntax
       - error
+
