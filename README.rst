@@ -1,17 +1,24 @@
-C based book source files
-=========================
+book review C prime plus review
+===============================
 
-c deeper
---------
+- code for exercises
+- questions answers
+- chapter summary on readme
+- handnote
 
-- :specification/c_prime_plus:
+Chapter summary
+---------------
 
-algorithm
----------
+:01_getting_ready:
 
-- :algorithm/realworld_algorithm:
+   - c build history
+   - 7 Steps to write a program
 
-dataStructure
--------------
+:02_introducing_c:
 
-- :datastructure/pbl_based:
+   - basic concept and rule for writting c code
+
+      - function
+      - declaration and assignment
+      - syntax
+      - error
