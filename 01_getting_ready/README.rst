@@ -5,6 +5,8 @@
    - bit about compilers and linkers
    - C standards
 
+:`handnote`_:
+
 :`Programming Exercises`_:
 
    1. `ex01`_/Write a program/inchtocm
@@ -12,5 +14,6 @@
       1. prompts the user to enter inch value
       #. convert inch to centimeters
 
+.. _`handnote`: ./handnote.pdf
 .. _`Programming Exercises`: ./exercises/
 .. _`ex01`: ./exercises/ex01_inchtocm.c
