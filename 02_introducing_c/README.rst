@@ -10,7 +10,7 @@
 
 :`handnote`_:
 :`Review questions`_: 
-:`Programming Exercises_`:
+:`Programming Exercises`_:
 
    1. ex01/print name in with multiple printf function calls 
 
